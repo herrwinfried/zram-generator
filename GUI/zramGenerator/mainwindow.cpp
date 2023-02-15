@@ -97,10 +97,10 @@ if (ret == 0) {
     QString URL;
     if (Re_ret == 0) {
         //Github
-         QString URL = "";
+         URL = "https://raw.githubusercontent.com/herrwinfried/zram-generator/main/zram-script.sh";
     } else if (Re_ret == 1) {
         //Gitlab
-         QString URL = "";
+         URL = "https://gitlab.com/HerrWinfried/zram-generator/-/raw/main/zram-script.sh";
     }
     if (Re_ret != 2) {
     QProcess::startDetached("/bin/bash", QStringList() << "-c" << QString("pkexec bash -c \" cd /tmp/ ; wget " + URL + " -o zram-script.sh; chmod +x ./zram-script.sh ; sh ./zram-script.sh" + Result + "  \" "));
